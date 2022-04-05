@@ -384,6 +384,9 @@ public class Author {
         return latexFreeAuthor;
     }
 
+    /*
+    * Returns author's first name capitalized
+    */
     public String capitalizeAuthor()
     {
         String firstPart = this.firstPart.substring(0,1).toUpperCase().concat(this.firstPart.substring(1));
