@@ -76,12 +76,27 @@ class AuthorTest {
         assertEquals(input, Author.addDotIfAbbreviation(input));
     }
 
-    @test
-    void capitalizeAuthorTest()
+    @Test
+    void capializeAuthorTest()
     {
-        Author author = new Author("jackes", "", "", "fonseca", "");
+        Author author = new Author("jackes", "", "", "Fonseca", "");
 
-        assertEquals(author.firstPart, "Jackes");
+        assertEquals("Jackes", author.capitalizeAuthor());
     }
 
+    @Test
+    void capializeAuthorTest2()
+    {
+        Author author = new Author("elaine", "", "", "venson", "");
+
+        assertEquals("Elaine", author.capitalizeAuthor());
+    }
+
+    @Test
+    void capializeAuthorTest3()
+    {
+        Author author = new Author("machado", "", "", "de assis", "");
+
+        assertEquals("Machado", author.capitalizeAuthor());
+    }
 }
