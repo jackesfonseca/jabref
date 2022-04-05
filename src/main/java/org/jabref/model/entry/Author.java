@@ -1,5 +1,6 @@
 package org.jabref.model.entry;
 
+import java.util.Locale;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -34,6 +35,16 @@ public class Author {
         vonPart = removeStartAndEndBraces(von);
         lastPart = removeStartAndEndBraces(last);
         jrPart = removeStartAndEndBraces(jr);
+    }
+
+    public String getFirstPart()
+    {
+        return firstPart;
+    }
+
+    public String getLastPart()
+    {
+        return lastPart;
     }
 
     public static String addDotIfAbbreviation(String name) {
@@ -371,5 +382,12 @@ public class Author {
             latexFreeAuthor.latexFreeAuthor = latexFreeAuthor;
         }
         return latexFreeAuthor;
+    }
+
+    public String capitalizeAuthor()
+    {
+        String firstPart = this.firstPart.substring(0,1).toUpperCase().concat(this.firstPart.substring(1));
+
+        return firstPart;
     }
 }
